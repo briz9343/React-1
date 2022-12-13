@@ -1,7 +1,9 @@
 import logo from './logo.svg';
 import './App.css';
+import data from './data.json';
 
 function App() {
+
   return (
     <div className="App">
       <header className="App-header">
@@ -18,6 +20,28 @@ function App() {
           Learn React
         </a>
       </header>
+      <table>
+        <tbody>
+          <tr>
+            <th>User Id</th>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+          </tr>
+          {
+            data.map((i) => {
+              return (
+                <tr key={Math.random(i)}>
+                  <td>{i.id}</td>
+                  <td>{i.title}</td>
+                  <td>{i.description}</td>
+                  <td>{i.price}</td>
+                </tr>
+              )
+            })
+          }
+        </tbody>
+      </table>
     </div>
   );
 }
