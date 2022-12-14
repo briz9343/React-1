@@ -4,6 +4,36 @@ import data from './data.json';
 
 function App() {
 
+  const myFunc = [
+    {
+      name: "Mobile",
+      ProductId: 1,
+      price: 20000
+    },
+    {
+      name: "Laptop",
+      ProductId: 2,
+      price: 50000
+    },
+    {
+      name: "tv",
+      ProductId: 3,
+      price: 30000
+    }
+  ];
+
+  // let sum = 0;
+ 
+  // for (const i of myFunc) {
+  //    sum = sum + i.price;
+  // }
+  // console.log(sum);
+
+  const totalPrice = myFunc.reduce((acc , currentPrice) => {
+    return acc + currentPrice.price;
+  },0)
+  console.log(totalPrice);
+
   return (
     <div className="App">
       <header className="App-header">
@@ -29,16 +59,16 @@ function App() {
             <th>Price</th>
           </tr>
           {
-            data.map((i) => {
-              return (
-                <tr key={Math.random(i)}>
-                  <td>{i.id}</td>
-                  <td>{i.title}</td>
-                  <td>{i.description}</td>
-                  <td>{i.price}</td>
-                </tr>
-              )
-            })
+            // data.map((i) => {
+            //   return (
+            //     <tr key={Math.random(i)}>
+            //       <td>{i.id}</td>
+            //       <td>{i.title}</td>
+            //       <td>{i.description}</td>
+            //       <td>{i.price}</td>
+            //     </tr>
+            //   )
+            // })
           }
         </tbody>
       </table>
