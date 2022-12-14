@@ -1,6 +1,7 @@
 import logo from './logo.svg';
 import './App.css';
 import data from './data.json';
+import { isLabelWithInternallyDisabledControl } from '@testing-library/user-event/dist/utils';
 
 function App() {
 
@@ -29,10 +30,21 @@ function App() {
   // }
   // console.log(sum);
 
-  const totalPrice = myFunc.reduce((acc , currentPrice) => {
-    return acc + currentPrice.price;
-  },0)
-  console.log(totalPrice);
+  // const totalPrice = myFunc.reduce((acc , currentPrice) => {
+  //   return acc + currentPrice.price;
+  // },0)
+  // console.log(totalPrice);
+
+  let [a,b,c,d] = [1,2,3,4,5];
+  console.log(d); 
+
+  let {name,price,id} = {
+      name : "tv",
+      price : 50000,
+      id : 1
+  }
+  
+  console.log(tv);
 
   return (
     <div className="App">
