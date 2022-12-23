@@ -1,58 +1,35 @@
 
-import { useState } from 'react';
+import  React , { Component } from 'react';
 import './App.css';
 
-const data = [
-  {
-    id: 101,
-    name: 'Abacavir',
-    quantity: 25,
-    price: 150,
-    expiry: 2022,
-    status: true
-  },
-  {
-    id: 102,
-    name: 'Eltrombopag',
-    quantity: 90,
-    price: 550,
-    expiry: 2021,
-    status: true
-  },
-  {
-    id: 103,
-    name: 'Meloxicam',
-    quantity: 85,
-    price: 450,
-    expiry: 2025,
-    status: false
-  }
-]
-
-function App() {
-  const [string , setString] = useState(data);
-
-  const onClickHandler = () => {
-
-    const filter = string.filter((i) => i.id !== 103);
-    setString(filter);
-  }
-
-  return (
-    <div>
-    {
-      string.map((i) =>  {
-        return (
-          <div>
-            user name is {i.name} <br/>
-            user id is {i.id}
-          </div>
-        )
-      })
+export default class App extends Component {
+ constructor(props) {
+  super(props);
+    this.state = {
+      name : 'Student',
+      email : 'Student@gmail.com',
+      student : {
+        name : 'Student1',
+        email : 'student1@gmail.com'
+      },
+      age : 19
     }
-      <button onClick={onClickHandler}>Add</button>
-    </div>
-  )
-  
+ }
+
+
+btn = () => {
+  this.setState({name : 'Employee', email : 'employee@gmail.com'});
+}
+
+  render(){
+    return(
+      <div>
+        Name is {this.state.name} <br/>
+        email is {this.state.email} <br/>
+        Student Name is {this.state.student.name} <br/>
+        <button onClick={this.btn}>Submit</button>
+      </div>
+    )
   }
-export default App;
+
+}
