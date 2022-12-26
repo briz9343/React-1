@@ -19,7 +19,7 @@ const header = (props) => {
             )
         })
       }
-      <br />
+      <br />  
       <About />
     </div>
   )
