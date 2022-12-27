@@ -1,14 +1,16 @@
 import React , {useEffect, useState} from 'react';
 import './App.css';
 
-// Updating components
+// Unmounting components
 export const App = ( ) => {
 
   const [count , setcount] = useState(0)
 
   useEffect(() => {
-    alert(count)
-  },[count])
+   return() => {
+    alert('R U Sure U Want To Close This Tab')
+   }
+  },[])
 
 
   return(
