@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class about extends Component {
+class About extends Component {
   render() {
     console.log("PROPS FROM CLASS ", this.props);
     return (
@@ -11,4 +11,4 @@ class about extends Component {
   }
 }
 
-export  default about
+export  default About
